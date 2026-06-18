@@ -1,4 +1,4 @@
-# Proyecto de Automatizacion QA - Jose Montezuma
+# Proyecto de Automatizacion QA - Marcos Vargas
 
 ## Descripcion
 
@@ -15,7 +15,7 @@ El objetivo del proyecto es automatizar distintas pruebas funcionales de una apl
 
 ## Instalacion
 
-`git clone https://github.com/Jdmonte4269AP/pre-entrega.git`
+`git clone https://github.com/Pogeniek/proyecto_final.git`
 
 
 ## Instalacion dependencias
