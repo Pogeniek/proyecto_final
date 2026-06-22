@@ -57,7 +57,6 @@ proyecto_final/
 └── README.md                 # Este archivo
 ```
 
-
 ---
 
 ## ⚙️ Instalación
@@ -66,94 +65,131 @@ proyecto_final/
 
 ```bash
 git clone https://github.com/Pogeniek/proyecto_final.git
+cd proyecto_final
+```
 
-Instalar dependencias
+### 2. Instalar dependencias
 
+```bash
 pip install -r requirements.txt
+```
 
-▶️ Cómo ejecutar las pruebas
-Ejecutar todas las pruebas
-bash
+### 3. Verificar instalación
 
+```bash
+pytest --version
+```
+
+---
+
+## ▶️ Cómo ejecutar las pruebas
+
+### Ejecutar todas las pruebas
+
+```bash
 pytest
+```
 
-Ejecutar pruebas específicas
-bash
+### Ejecutar pruebas específicas
 
+```bash
 # Solo pruebas de login
 pytest tests/test_login.py
 
 # Solo pruebas de API
 pytest tests/test_api.py
+```
 
-Generar reporte HTML
-bash
+### Generar reporte HTML
 
+```bash
 pytest --html=reports/report.html
+```
 
-📊 Resultados y reportes
-Reporte HTML
+---
 
-Después de ejecutar las pruebas, se genera un reporte en reports/report.html. Lo abro en el navegador y veo:
+## 📊 Resultados y reportes
 
-    ✅ Pruebas que pasaron
+### Reporte HTML
 
-    ❌ Pruebas que fallaron
+Después de ejecutar las pruebas, se genera un reporte en `reports/report.html`. Lo abro en el navegador y veo:
 
-    ⏱️ Tiempo de ejecución
+- ✅ Pruebas que pasaron
+- ❌ Pruebas que fallaron
+- ⏱️ Tiempo de ejecución
+- 📸 Captura de pantalla si falló
 
-    📸 Captura de pantalla si falló
+### Logs
 
-Logs
+En la carpeta `logs/` se guarda un registro de lo que pasó durante la ejecución.
 
-En la carpeta logs/ se guarda un registro de lo que pasó durante la ejecución.
-Capturas de pantalla
+### Capturas de pantalla
 
-Si una prueba falla, se guarda automáticamente una captura en screenshots/.
-🧪 Pruebas que hice
-Pruebas de UI (página web)
-#	Prueba	Tipo
-1	Login exitoso	Positivo
-2	Login fallido	Negativo
-3	Agregar producto al carrito	Positivo
-4	Eliminar producto del carrito	Positivo
-5	Completar proceso de compra	Positivo
-Pruebas de API
-#	Prueba	Método
-1	Obtener lista de usuarios	GET
-2	Crear usuario nuevo	POST
-3	Eliminar usuario	DELETE
-🏗️ Cómo organicé el código
+Si una prueba falla, se guarda automáticamente una captura en `screenshots/`.
 
-Usé Page Object Model para separar las páginas de las pruebas:
-text
+---
 
+## 🧪 Pruebas que hice
+
+### Pruebas de UI (página web)
+
+| # | Prueba | Tipo |
+|---|--------|------|
+| 1 | Login exitoso | Positivo |
+| 2 | Login fallido | Negativo |
+| 3 | Agregar producto al carrito | Positivo |
+| 4 | Eliminar producto del carrito | Positivo |
+| 5 | Completar proceso de compra | Positivo |
+
+### Pruebas de API
+
+| # | Prueba | Método |
+|---|--------|--------|
+| 1 | Obtener lista de usuarios | GET |
+| 2 | Crear usuario nuevo | POST |
+| 3 | Eliminar usuario | DELETE |
+
+---
+
+## 🏗️ Cómo organicé el código
+
+Usé **Page Object Model** para separar las páginas de las pruebas:
+
+```
 pages/          → Dónde están los botones, campos, etc.
 tests/          → Las pruebas que verifican el comportamiento
+```
 
 Esto hace que el código sea más fácil de mantener.
-📌 Buenas prácticas que apliqué
 
-    ✅ Separé las páginas de las pruebas (POM)
+---
 
-    ✅ Usé esperas explícitas (evito time.sleep())
+## 📌 Buenas prácticas que apliqué
 
-    ✅ Las pruebas son independientes entre sí
+- ✅ Separé las páginas de las pruebas (POM)
+- ✅ Usé esperas explícitas (evito `time.sleep()`)
+- ✅ Las pruebas son independientes entre sí
+- ✅ Usé datos externos (JSON/CSV) para parametrizar
+- ✅ Incluí escenarios negativos
+- ✅ Genero reportes automáticos
+- ✅ Capturo pantalla cuando falla
+- ✅ Guardo logs de ejecución
 
-    ✅ Usé datos externos (JSON/CSV) para parametrizar
+---
 
-    ✅ Incluí escenarios negativos
+## 🐛 Si algo falla
 
-    ✅ Genero reportes automáticos
+1. Reviso el log en `logs/test_execution.log`
+2. Abro el reporte HTML en `reports/report.html`
+3. Veo la captura en `screenshots/`
 
-    ✅ Capturo pantalla cuando falla
+---
 
-    ✅ Guardo logs de ejecución
+## ✍️ Autor
 
-🐛 Si algo falla
+**Marcos Vargas**  
+GitHub: [@Pogeniek](https://github.com/Pogeniek)
 
-    Reviso el log en logs/test_execution.log
+---
 
-    Abro el reporte HTML en reports/report.html
-
-    Veo la captura en screenshots/
+**Última actualización:** Junio 2026
