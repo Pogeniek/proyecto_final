@@ -25,18 +25,37 @@ El objetivo es practicar lo que aprendimos en clase y tener un proyecto para mos
 
 ## 📁 Estructura del proyecto
 
+```
 proyecto_final/
 │
-├── pages/ # Page Objects (login, productos, carrito, checkout)
-├── tests/ # Pruebas (login, carrito, checkout, API)
-├── utils/ # Configuraciones y helpers
-├── data/ # Datos de prueba (JSON, CSV)
-├── reports/ # Reportes HTML
-├── logs/ # Logs de ejecución
-├── screenshots/ # Capturas de pantalla (fallos)
+├── pages/                    # Page Objects
+│   ├── login_page.py
+│   ├── products_page.py
+│   ├── cart_page.py
+│   └── checkout_page.py
 │
-├── requirements.txt # Dependencias
-└── README.md # Este archivo
+├── tests/                    # Pruebas
+│   ├── test_login.py
+│   ├── test_cart.py
+│   ├── test_checkout.py
+│   └── test_api.py
+│
+├── utils/                    # Helpers y configuraciones
+│   ├── driver.py
+│   ├── logger.py
+│   └── screenshot.py
+│
+├── data/                     # Datos de prueba
+│   ├── login_data.json
+│   └── products_data.csv
+│
+├── reports/                  # Reportes HTML
+├── logs/                     # Logs de ejecución
+├── screenshots/              # Capturas de fallos
+│
+├── requirements.txt          # Dependencias
+└── README.md                 # Este archivo
+```
 
 
 ---
